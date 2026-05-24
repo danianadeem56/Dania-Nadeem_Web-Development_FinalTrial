@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TravelEx-Iternship Task</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .page-section {
+        display: none;
+      }
+      .page-section.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-100 text-gray-800 font-sans flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-emerald-900 bg-shadow-md">
+      <div
+        class="container mx-auto px-5 py-5 flex justify-between items-center"
+      >
+        <div
+          class="text-2xl font-bold text-[oklch(98.5%_0_0)] tracking-wide cursor-pointer"
+          onclick="navigateTo('home')"
+        >
+          Travel<span class="text-emerald-600">Ex</span>
+        </div>
+
+        <nav class="hidden md:flex space-x-6 font-medium">
+          <button
+            onclick="navigateTo('home')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            Home
+          </button>
+          <button
+            onclick="navigateTo('umrah')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            Umrah Packages
+          </button>
+          <button
+            onclick="navigateTo('tours')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            Customized Tours
+          </button>
+          <button
+            onclick="navigateTo('blogs')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            Blogs
+          </button>
+          <button
+            onclick="navigateTo('faqs')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            FAQs
+          </button>
+          <button
+            onclick="navigateTo('contact')"
+            class="nav-link text-[oklch(98.5%_0_0)] hover:text-emerald-500 transition"
+          >
+            Contact Us
+          </button>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <a
+            href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20free%20quote%20chahiye."
+            target="_blank"
+            class="hidden sm:inline-block bg-emerald-600 hover:bg-emerald-500 text-[oklch(98.5%_0_0)] px-5 py-2.5 rounded-full font-semibold shadow transition text-sm text-center"
+          >
+            Call Us Now
+          </a>
+          <button
+            onclick="toggleMobileMenu()"
+            class="md:hidden text-[oklch(98.5%_0_0)] text-2xl focus:outline-none focus:text-emerald-500"
+          >
+            <i id="menu-icon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3 shadow-inner"
+      >
+        <button
+          onclick="navigateTo('home')"
+          class="block w-full text-left py-2 text-gray-700 font-medium border-b border-gray-50"
+        >
+          Home
+        </button>
+        <button
+          onclick="navigateTo('umrah')"
+          class="block w-full text-left py-2 text-gray-700 font-medium border-b border-gray-50"
+        >
+          Umrah Packages
+        </button>
+        <button
+          onclick="navigateTo('tours')"
+          class="block w-full text-left py-2 text-gray-700 font-medium border-b border-gray-50"
+        >
+          Customized Tours
+        </button>
+        <button
+          onclick="navigateTo('blogs')"
+          class="block w-full text-left py-2 text-gray-700 font-medium border-b border-gray-50"
+        >
+          Blogs
+        </button>
+        <button
+          onclick="navigateTo('faqs')"
+          class="block w-full text-left py-2 text-gray-700 font-medium border-b border-gray-50"
+        >
+          FAQs
+        </button>
+        <button
+          onclick="navigateTo('contact')"
+          class="block w-full text-left py-2 text-gray-700 font-medium"
+        >
+          Contact Us
+        </button>
+        <a
+          href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20free%20quote%20chahiye."
+          target="_blank"
+          class="w-full bg-emerald-600 text-white text-center py-2.5 rounded-xl font-bold block mt-4"
+        >
+          Call Us Now
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <div id="page-home" class="page-section active">
+        <section
+          class="relative bg-emerald-900 text-white min-h-[75vh] flex items-center overflow-hidden"
+        >
+          <div
+            class="absolute inset-0 opacity-40 bg-[url('images/bg.jpg')] bg-cover bg-center mix-blend-overlay"
+          ></div>
+          <div
+            class="container mx-auto px-4 z-10 py-12 text-center md:text-left max-w-5xl"
+          >
+            <span
+              class="bg-emerald-600 text-slate-900 px-4 py-2 rounded-full border border-gray-500 font-bold text-xs capitalize tracking-wider inline-block mb-5"
+            >
+              ⭐ Over 1,000+ Families Trusted Us
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+              Your Spiritual Umrah,Hajj & International Travel <br />
+              <span class="text-emerald-400 font-bold"
+                >Planned with Care & Peace of Mind</span
+              >
+            </h1>
+            <p
+              class="text-lg md:text-xl text-[oklch(98.5%_0_0)] mb-8 max-w-2xl text-center md:text-left mx-auto md:mx-0"
+            >
+              No any stress of hidden fees and booking hassles. With TravelEx,
+              you get fully customizable packages, handpicked premium hotels,
+              and 24/7 on-ground support.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <button
+                onclick="navigateTo('umrah')"
+                class="bg-emerald-600 hover:bg-emerald-500 text-slate-900 font-bold px-5 py-4 rounded-full shadow-lg transition"
+              >
+                Explore Umrah Packages
+              </button>
+              <button
+                onclick="navigateTo('tours')"
+                class="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold px-5 py-4 rounded-full transition"
+              >
+                Plan Customized Tour
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="py-16 border-b border-gray-100">
+          <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+              <h2 class="text-3xl font-bold text-gray-900 mb-2">
+                Why Trust TravelEx with Your Journey?
+              </h2>
+              <p class="text-gray-600">
+                We don’t just sell tickets.We take full responsibility for your
+                peace of mind from departure to return.
+              </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+              <div class="p-6 bg-gray-50 rounded-2xl">
+                <div class="text-emerald-600 text-3xl mb-4">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2">Govt & IATA Approved</h4>
+                <p class="text-sm text-gray-500">
+                  A government-approved and fully certified agency registered
+                  with the Department of Tourist Services.
+                </p>
+              </div>
+              <div class="p-6 bg-gray-50 rounded-2xl">
+                <div class="text-amber-500 text-3xl mb-4">
+                  <i class="fa-solid fa-hand-holding-dollar"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2">100% Transparent Rates</h4>
+                <p class="text-sm text-gray-500">
+                  No last-minute surprises, hidden fees. What we promise is
+                  exactly what we deliver.
+                </p>
+              </div>
+              <div class="p-6 bg-gray-50 rounded-2xl">
+                <div class="text-blue-500 text-3xl mb-4">
+                  <i class="fa-solid fa-headset"></i>
+                </div>
+                <h4 class="text-lg font-bold mb-2">24/7 On-Ground Support</h4>
+                <p class="text-sm text-gray-500">
+                  Our dedicated team is available in person and via chat to
+                  handle any emergency or request during your trip.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div id="page-umrah" class="page-section py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+              Our Premium & Value-for-Money Umrah Packages
+            </h2>
+            <p class="text-gray-600 max-w-xl mx-auto text-sm md:text-base">
+              Carefully selected hotel accommodations and hassle-free transport
+              services tailored to your budget and travel needs.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between transition hover:shadow-xl"
+            >
+              <div>
+                <div
+                  class="relative h-44 bg-cover bg-center"
+                  style="background-image: url('images/umrah 1.jpg')"
+                >
+                  <span
+                    class="absolute bottom-3 left-3 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider"
+                    >Economy</span
+                  >
+                </div>
+                <div class="p-5">
+                  <span class="text-xs text-gray-500 block mb-0.5"
+                    >Starting from</span
+                  >
+                  <div class="text-xl font-extrabold text-emerald-700 mb-4">
+                    Rs. 195,000
+                    <span class="text-xs font-normal text-gray-500"
+                      >/ person</span
+                    >
+                  </div>
+
+                  <ul class="space-y-2.5 text-xs text-gray-600">
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>AI Eiman Hotel (7 Days)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>3x Daily Meals Provided</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>AC Transport</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Ziyarat Makkah & Madinah</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-5 pt-0">
+                <a
+                  href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20Economy%20Umrah%20Package%20ki%20details%20chahiye."
+                  target="_blank"
+                  class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-2.5 rounded-xl font-bold block text-xs transition shadow-sm"
+                >
+                  View Details & Book
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between transition hover:shadow-xl"
+            >
+              <div>
+                <div
+                  class="relative h-44 bg-cover bg-center"
+                  style="background-image: url('images/umrah 2.jpg')"
+                >
+                  <span
+                    class="absolute bottom-3 left-3 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider"
+                    >Regular</span
+                  >
+                </div>
+                <div class="p-5">
+                  <span class="text-xs text-gray-500 block mb-0.5"
+                    >Starting from</span
+                  >
+                  <div class="text-xl font-extrabold text-emerald-700 mb-4">
+                    Rs. 245,000
+                    <span class="text-xs font-normal text-gray-500"
+                      >/ person</span
+                    >
+                  </div>
+
+                  <ul class="space-y-2.5 text-xs text-gray-600">
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Swiss International Hotel (10 Days)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>3x Daily Buffet Meals</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Luxury Shuttle/AC Bus</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Guided Ziyarat Tour</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-5 pt-0">
+                <a
+                  href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20Regular%20Umrah%20Package%20ki%20details%20chahiye."
+                  target="_blank"
+                  class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-2.5 rounded-xl font-bold block text-xs transition shadow-sm"
+                >
+                  View Details & Book
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between transition hover:shadow-xl"
+            >
+              <div>
+                <div
+                  class="relative h-44 bg-cover bg-center"
+                  style="background-image: url('images/umrah 3.jpg')"
+                >
+                  <span
+                    class="absolute bottom-3 left-3 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider"
+                    >VIP Luxury</span
+                  >
+                </div>
+                <div class="p-5">
+                  <span class="text-xs text-gray-500 block mb-0.5"
+                    >Starting from</span
+                  >
+                  <div class="text-xl font-extrabold text-emerald-700 mb-4">
+                    Rs. 320,000
+                    <span class="text-xs font-normal text-gray-500"
+                      >/ person</span
+                    >
+                  </div>
+
+                  <ul class="space-y-2.5 text-xs text-gray-600">
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Madinah Hilton Hotel (14 Days)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>VIP Catering Services</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Private SUV/GMC Transport</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Exclusive Historical Ziyarat</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-5 pt-0">
+                <a
+                  href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20VIP%20Umrah%20Package%20ki%20details%20chahiye."
+                  target="_blank"
+                  class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-2.5 rounded-xl font-bold block text-xs transition shadow-sm"
+                >
+                  View Details & Book
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md flex flex-col justify-between transition hover:shadow-xl"
+            >
+              <div>
+                <div
+                  class="relative h-44 bg-cover bg-center"
+                  style="background-image: url('images/umrah 4.jpg')"
+                >
+                  <span
+                    class="absolute bottom-3 left-3 bg-emerald-900 text-white text-[10px] font-bold px-3 py-1 rounded-md uppercase tracking-wider"
+                    >Private</span
+                  >
+                </div>
+                <div class="p-5">
+                  <span class="text-xs text-gray-500 block mb-0.5"
+                    >Starting from</span
+                  >
+                  <div class="text-xl font-extrabold text-emerald-700 mb-4">
+                    Rs. 389,000
+                    <span class="text-xs font-normal text-gray-500"
+                      >/ person</span
+                    >
+                  </div>
+
+                  <ul class="space-y-2.5 text-xs text-gray-600">
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Four Seasons Riyadh Hotel (21 Days)</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Custom Menu & Dietary Planning</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Private Luxury Sedan & Driver</span>
+                    </li>
+                    <li class="flex items-start">
+                      <i
+                        class="fa-solid fa-circle-check text-emerald-600 mt-0.5 mr-2"
+                      ></i>
+                      <span>Exclusive Private Scholar Guide</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-5 pt-0">
+                <a
+                  href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20Private%20Umrah%20Package%20ki%20details%20chahiye."
+                  target="_blank"
+                  class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-2.5 rounded-xl font-bold block text-xs transition shadow-sm"
+                >
+                  View Details & Book
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-tours" class="page-section py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">
+              Design Your Journey in your Way
+            </h2>
+            <p class="text-gray-600">
+              Select your preferences below, and our team will craft a fully
+              customized travel package just for you.
+            </p>
+          </div>
+          <div
+            class="bg-white p-6 md:p-8 rounded-2xl shadow-md border border-gray-200"
+          >
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-2"
+                  >Destination</label
+                >
+                <select class="w-full p-3 border rounded-xl bg-gray-50 text-sm">
+                  <option>Turkey</option>
+                  <option>Dubai</option>
+                  <option>Malaysia</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-2"
+                  >Travelers</label
+                >
+                <select class="w-full p-3 border rounded-xl bg-gray-50 text-sm">
+                  <option>1 Person (Solo)</option>
+                  <option>2 Persons (Couple)</option>
+                  <option>Family</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-2"
+                  >Budget Profile</label
+                >
+                <select class="w-full p-3 border rounded-xl bg-gray-50 text-sm">
+                  <option>Economy</option>
+                  <option>Standard</option>
+                  <option>Premium</option>
+                </select>
+              </div>
+            </div>
+            <a
+              href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20customized%20tour%20ka%20quote%20chahiye."
+              target="_blank"
+              class="w-full bg-emerald-600 hover:bg-emerald-500 text-white text-center py-3.5 rounded-xl font-bold transition block"
+            >
+              Proceed to Get Package Quote
+              <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-blogs" class="page-section py-16">
+        <div class="container mx-auto px-4 max-w-5xl">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">
+              Travel Guides & Essential Informations
+            </h2>
+            <p class="text-gray-600">
+              Don't miss these expert tips and checklists before embarking on
+              your journey.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            <div
+              class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col sm:flex-row"
+            >
+              <div
+                class="sm:w-1/3 bg-cover bg-center h-48 sm:h-auto"
+                style="background-image: url('images/umrah 5.jpg')"
+              ></div>
+              <div class="p-6 sm:w-2/3">
+                <span class="text-xs font-bold text-emerald-600 uppercase"
+                  >Umrah Guidelines</span
+                >
+                <h4 class="font-bold text-lg text-gray-900 mt-1 mb-2">
+                  How to Prepare for Umrah: The Ultimate Packing Checklist
+                </h4>
+                <p class="text-gray-500 text-xs mb-4">
+                  From Ihram essentials to required medications, here is
+                  everything you need to know before your departure...
+                </p>
+                <button
+                  onclick="navigateTo('contact')"
+                  class="text-emerald-700 text-xs font-bold hover:underline"
+                >
+                  Read Article
+                </button>
+              </div>
+            </div>
+            <div
+              class="border border-gray-200 rounded-xl overflow-hidden shadow-sm flex flex-col sm:flex-row"
+            >
+              <div
+                class="sm:w-1/3 bg-cover bg-center h-48 sm:h-auto bg-[url('images/turkey.jpg')]"
+              ></div>
+              <div class="p-6 sm:w-2/3">
+                <span class="text-xs font-bold text-emerald-600 uppercase"
+                  >Visa Guidelines</span
+                >
+                <h4 class="font-bold text-lg text-gray-900 mt-1 mb-2">
+                  Turkey Tourist Visa Process for Pakistanis (2026 Guide)
+                </h4>
+                <p class="text-gray-500 text-xs mb-4">
+                  A step-by-step guide to visa applications, bank statement
+                  criteria, and perfect document preparation...
+                </p>
+                <button
+                  onclick="navigateTo('contact')"
+                  class="text-emerald-700 text-xs font-bold hover:underline"
+                >
+                  Read Article
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-faqs" class="page-section py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white border rounded-xl p-5 shadow-sm">
+              <h4 class="font-bold text-gray-900 mb-1">
+                <i class="fa-solid fa-circle-question text-emerald-600 mr-2"></i
+                >Are flight tickets included in the Umrah packages?
+              </h4>
+              <p class="text-gray-600 text-sm pl-6">
+                Yes, all our packages are fully inclusive. They cover your
+                return airfare, visa processing, hotel accommodations, and local
+                transport.
+              </p>
+            </div>
+            <div class="bg-white border rounded-xl p-5 shadow-sm">
+              <h4 class="font-bold text-gray-900 mb-1">
+                <i class="fa-solid fa-circle-question text-emerald-600 mr-2"></i
+                >How long does the visa processing take?
+              </h4>
+              <p class="text-gray-600 text-sm pl-6">
+                Umrah visas are typically processed within 24 to 48 hours.
+                International tourist visas usually take between 7 to 15 working
+                days, depending on the destination.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="page-contact" class="page-section py-16">
+        <div class="container mx-auto px-4 max-w-lg">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+              Contact Us
+            </h2>
+          </div>
+
+          <div class="bg-white text-gray-800 p-6 rounded-2xl shadow-xl">
+            <form class="space-y-4">
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-1"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  required
+                  placeholder="Full Name"
+                  class="w-full p-2.5 border rounded-xl bg-gray-50 focus:outline-emerald-600 text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-1"
+                  >WhatsApp Number</label
+                >
+                <input
+                  type="tel"
+                  required
+                  placeholder="03XXXXXXXXX"
+                  class="w-full p-2.5 border rounded-xl bg-gray-50 focus:outline-emerald-600 text-sm"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-s font-bold text-gray-700 capitalize mb-1"
+                  >Service Required</label
+                >
+                <select
+                  class="w-full p-2.5 border rounded-xl bg-gray-50 focus:outline-emerald-600 text-sm"
+                >
+                  <option>Umrah Packages</option>
+                  <option>Custom International Tour</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl shadow transition text-sm"
+              >
+                Submit Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-emerald-900 text-slate-100 py-4 text-center text-s border-t border-slate-900"
+    >
+      <p>
+        &copy; 2026 TravelEx. Designed for TOOP Summer 2026 Internship Program.
+      </p>
+    </footer>
+
+    <a
+      href="https://wa.me/923000000000?text=Salam%20TravelEx,%20mujhe%20packages%20ki%20details%20chahiye."
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl text-2xl z-50 flex items-center justify-center transition hover:scale-110"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+      function navigateTo(pageId) {
+        // Saare sections se active hatao aur target section pe active laga do
+        document
+          .querySelectorAll(".page-section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById("page-" + pageId).classList.add("active");
+
+        // Mobile menu toggle off aur top scroll
+        document.getElementById("mobile-menu").classList.add("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function toggleMobileMenu() {
+        // Mobile menu show/hide click par
+        document.getElementById("mobile-menu").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
